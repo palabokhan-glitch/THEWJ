@@ -300,7 +300,7 @@ h1, h2, h3, h4 {
 
 .hero {
   background: linear-gradient(rgba(10, 21, 19, 0.72), rgba(10, 21, 19, 0.8)),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="1200" height="800" fill="%2313221f"/></svg>');
+    url('../images/office.jpg');
   background-size: cover;
   background-position: center;
   color: var(--color-white);
