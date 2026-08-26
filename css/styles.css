@@ -1,18 +1,19 @@
 /* ===== THEWJ Law Firm — Stylesheet ===== */
 
 :root {
-  --color-navy: #0f2540;
-  --color-navy-dark: #081627;
-  --color-gold: #b8975a;
-  --color-gold-light: #d4b483;
-  --color-cream: #f7f5f1;
+  --color-navy: #13221f;
+  --color-navy-dark: #0a1513;
+  --color-gold: #cf9f4e;
+  --color-gold-light: #e2bd7c;
+  --color-cream: #faf7f1;
   --color-white: #ffffff;
-  --color-text: #2b2b2b;
-  --color-text-light: #6b6b6b;
-  --color-border: #e2ddd3;
+  --color-text: #262624;
+  --color-text-light: #6c6c68;
+  --color-border: #e8e2d3;
   --font-heading: Georgia, 'Times New Roman', Times, serif;
   --font-body: 'Helvetica Neue', Arial, sans-serif;
   --max-width: 1160px;
+  --radius: 8px;
   --transition: 0.25s ease;
 }
 
@@ -102,10 +103,10 @@ h1, h2, h3, h4 {
   display: inline-block;
   padding: 14px 32px;
   border: 1px solid transparent;
+  border-radius: var(--radius);
   font-size: 0.9rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-weight: 700;
   cursor: pointer;
   transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
@@ -116,6 +117,17 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary:hover {
+  background: var(--color-gold-light);
+}
+
+.btn-soft {
+  background: var(--color-gold);
+  color: var(--color-navy-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn-soft:hover {
   background: var(--color-gold-light);
 }
 
@@ -185,14 +197,60 @@ h1, h2, h3, h4 {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--color-navy);
   letter-spacing: 0.02em;
 }
 
-.logo span {
+.logo .accent {
   color: var(--color-gold);
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-name {
+  font-size: 1.3rem;
+}
+
+.logo-tagline {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.logo-lg {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.logo-lg .logo-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.logo-lg .logo-text {
+  align-items: center;
 }
 
 .nav-links {
@@ -223,28 +281,37 @@ h1, h2, h3, h4 {
 .nav-toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   background: none;
-  border: none;
+  border: 1.5px solid var(--color-gold);
+  border-radius: 6px;
   cursor: pointer;
-  padding: 6px;
+  padding: 10px 12px;
 }
 
 .nav-toggle span {
-  width: 26px;
+  width: 22px;
   height: 2px;
-  background: var(--color-navy);
+  background: var(--color-gold);
 }
 
 /* ===== Hero ===== */
 
 .hero {
-  background: linear-gradient(rgba(8, 22, 39, 0.82), rgba(8, 22, 39, 0.88)),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="1200" height="800" fill="%230f2540"/></svg>');
+  background: linear-gradient(rgba(10, 21, 19, 0.72), rgba(10, 21, 19, 0.8)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="1200" height="800" fill="%2313221f"/></svg>');
   background-size: cover;
   background-position: center;
   color: var(--color-white);
-  padding: 140px 0 120px;
+  padding: 150px 0 130px;
+  text-align: center;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero .eyebrow {
@@ -253,9 +320,12 @@ h1, h2, h3, h4 {
 
 .hero h1 {
   color: var(--color-white);
-  font-size: 3rem;
-  max-width: 720px;
-  margin-bottom: 22px;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.6rem;
+  max-width: 640px;
+  margin-bottom: 30px;
 }
 
 .hero p {
@@ -269,6 +339,7 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .page-hero {
@@ -654,10 +725,50 @@ h1, h2, h3, h4 {
 
 /* ===== Footer ===== */
 
+.footer-newsletter {
+  background: var(--color-white);
+  padding: 80px 0 50px;
+  text-align: center;
+}
+
+.footer-newsletter h3 {
+  font-size: 1.3rem;
+  margin: 22px 0 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 440px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.newsletter-form button {
+  border: none;
+}
+
 .site-footer {
-  background: var(--color-navy-dark);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 70px 0 24px;
+  background: var(--color-white);
+  color: var(--color-text-light);
+  padding: 40px 0 24px;
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-grid {
@@ -668,16 +779,16 @@ h1, h2, h3, h4 {
 }
 
 .footer-grid h4 {
-  color: var(--color-white);
+  color: var(--color-navy);
   font-size: 1rem;
   margin-bottom: 20px;
   letter-spacing: 0.03em;
 }
 
 .footer-grid .logo {
-  color: var(--color-white);
+  color: var(--color-navy);
   margin-bottom: 14px;
-  display: inline-block;
+  display: inline-flex;
 }
 
 .footer-grid p {
@@ -690,11 +801,11 @@ h1, h2, h3, h4 {
 }
 
 .footer-grid ul li a:hover {
-  color: var(--color-gold-light);
+  color: var(--color-gold);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--color-border);
   padding-top: 22px;
   display: flex;
   justify-content: space-between;
@@ -704,7 +815,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-bottom a:hover {
-  color: var(--color-gold-light);
+  color: var(--color-gold);
 }
 
 /* ===== Responsive ===== */
