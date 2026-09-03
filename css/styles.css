@@ -583,6 +583,22 @@ h1, h2, h3, h4 {
 .attorney-card p.bio {
   color: var(--color-text-light);
   font-size: 0.92rem;
+  text-align: left;
+}
+
+.attorney-card .field-label {
+  display: block;
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 14px 0 4px;
+}
+
+.attorney-card .field-label:first-of-type {
+  margin-top: 0;
 }
 
 /* ===== Testimonials ===== */
